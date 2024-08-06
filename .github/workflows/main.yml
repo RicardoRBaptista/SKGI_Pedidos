@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branchs: ["main"]
+    branchs: ["Main"]
 
   workflow_dispatch:
 
