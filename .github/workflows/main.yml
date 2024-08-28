@@ -2,7 +2,8 @@ name: Deploy
 
 on:
   push:
-    branchs: ["main"]
+    branches: 
+    - main
 
   workflow_dispatch:
 
@@ -28,7 +29,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 8.0.400
+          dotnet-version: 8.x
 
       - name: Install .NET Wasm Tools
         run: dotnet workload install wasm-tools
