@@ -1,24 +1,33 @@
-﻿using System.Security.Claims;
-
-namespace SKGI_Pedidos.Models
+﻿namespace SKGI_Pedidos.Models
 {
     public class Pedidos
     {
-        public Pedidos(string pedido, DateTime emissao, string status, int nF, DateTime date, string transportadora)
+        public Pedidos()
         {
-            Pedido = pedido;
-            Emissao = emissao;
-            Status = status;
-            NF = nF;
-            this.date = date;
-            Transportadora = transportadora;
+
         }
 
-        public string Pedido { get; set; }
+        public Pedidos(int numero, DateTime emissao, string status, int qtdTotal, int nF, DateTime coleta, string cliente, string transportadora, string oBS)
+        {
+            Numero = numero;
+            Emissao = emissao;
+            Status = status;
+            QtdTotal = qtdTotal;
+            NF = nF;
+            Coleta = coleta;
+            Cliente = cliente;
+            Transportadora = transportadora;
+            OBS = oBS;
+        }
+
+        public int Numero { get; set; }
         public DateTime Emissao { get; set; }
-        public string Status { get; set; }
+        public string? Status { get; set; }
+        public int QtdTotal { get; set; }
         public int NF { get; set; }
-        public DateTime date { get; set; }
-        public string Transportadora { get; set; }
+        public DateTime Coleta { get; set; }
+        public string? Cliente { get; set; }
+        public string? Transportadora { get; set; }
+        public string? OBS { get; set; }
     }
 }

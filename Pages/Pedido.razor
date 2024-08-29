@@ -1,0 +1,47 @@
+﻿@page "/pedidos"
+
+<h3>Lista de Pedidos</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Número</th>
+            <th>Emissão</th>
+            <th>Status</th>
+            <th>Qtd Total</th>
+            <th>NF</th>
+            <th>Coleta</th>
+            <th>Cliente</th>
+            <th>Transportadora</th>
+            <th>OBS</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pedido in pedidos)
+        {
+            <tr>
+                <td>@pedido.Numero</td>
+                <td>@pedido.Emissao.ToString("dd/MM/yyyy")</td>
+                <td>@pedido.Status</td>
+                <td>@pedido.QtdTotal</td>
+                <td>@pedido.NF</td>
+                <td>@pedido.Coleta.ToString("dd/MM/yyyy")</td>
+                <td>@pedido.Cliente</td>
+                <td>@pedido.Transportadora</td>
+                <td>@pedido.OBS</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Pedidos> pedidos = new List<Pedidos>
+    {
+        new Pedidos { Numero = 32551, Emissao = new DateTime(2024, 8, 28), Status = "Enviado para separação", QtdTotal = 265, NF = 0, Coleta = new DateTime(2024, 8, 30), Cliente = "SOLICITAÇÃO COMERCIAL 28/08", Transportadora = "", OBS = "" },
+        new Pedidos { Numero = 32550, Emissao = new DateTime(2024, 8, 28), Status = "Separado", QtdTotal = 105, NF = 0, Coleta = new DateTime(2024, 8, 29), Cliente = "REPOSIÇÃO DE ESTOQUE 29/08", Transportadora = "", OBS = "" },
+        new Pedidos { Numero = 32549, Emissao = new DateTime(2024, 8, 26), Status = "Faturado", QtdTotal = 485, NF = 0, Coleta = new DateTime(2024, 8, 27), Cliente = "SOLICITAÇÃO COMERCIAL 26/08", Transportadora = "", OBS = "" },
+        new Pedidos { Numero = 32547, Emissao = new DateTime(2024, 8, 26), Status = "Faturado", QtdTotal = 404, NF = 0, Coleta = new DateTime(2024, 8, 27), Cliente = "REPOSIÇÃO DE ESTOQUE 2708", Transportadora = "", OBS = "" },
+        new Pedidos { Numero = 32546, Emissao = new DateTime(2024, 8, 26), Status = "Faturado", QtdTotal = 100, NF = 0, Coleta = new DateTime(2024, 8, 27), Cliente = "GRUPO FARTURA", Transportadora = "", OBS = "" },
+        // Adicione os outros itens aqui...
+    };
+}

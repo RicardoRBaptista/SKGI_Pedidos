@@ -2,7 +2,7 @@
 
 <h3>Estoque de Produtos</h3>
 
-@if (lEstoque == null)
+@if (estoques == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -21,10 +21,10 @@ else
         </tr>
     </thead>
     <tbody>
-            @foreach (Estoque estoque in lEstoque)
+            @foreach (Estoque estoque in estoques)
         {
             <tr>
-                <td>@estoque.codigo</td>
+                <td>@estoque.Codigo</td>
                 <td>@estoque.Nome</td>
                 <td>@estoque.SaldoEstoque</td>
                 <td>@estoque.Empenhada</td>
@@ -38,13 +38,5 @@ else
 }
 
 @code {
-    private List<Estoque> lEstoque = new List<Estoque>
-    {
-        new Estoque("IM001CHN0052", "MACARRAO SWEET POTATO VERMICELLE 400GX30", 240, 0, 0, 0, 240),
-        new Estoque { codigo = "IM001CHN0500", Nome = "ALGAS HIJIKI 40GX100/CTN", SaldoEstoque = 150, Empenhada = 0, Quarentena = 0, NaoConforme = 0, EstoqueFinal = 150 },
-        new Estoque { codigo = "IM001THA0107", Nome = "GELATINAS AGAR PO AG DESS MIX ALM FL 120/130G", SaldoEstoque = 19, Empenhada = 0, Quarentena = 0, NaoConforme = 0, EstoqueFinal = 19 },
-        new Estoque { codigo = "IM001THA0833", Nome = "LEITE COCO COCONUT MILK 17-19%FAT 24X400ML", SaldoEstoque = 150, Empenhada = 0, Quarentena = 0, NaoConforme = 0, EstoqueFinal = 150 },
-        new Estoque { codigo = "IM001TWN0323", Nome = "MASSAS ARROZ RICE PAPER 22CM 340GX50", SaldoEstoque = 715, Empenhada = 0, Quarentena = 0, NaoConforme = 0, EstoqueFinal = 715 },
-        // Adicione os outros itens aqui...
-    };
+    private List<Estoque> estoques = Estoque.carregaEstoque();
 }

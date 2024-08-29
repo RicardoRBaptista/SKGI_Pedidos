@@ -1,0 +1,38 @@
+﻿@page "/relmaioressaidas"
+
+<h3>Maiores Saídas</h3>
+
+<DataGrid TItem="MaioresSaidas" Data="@maioresSaidas" AutoGenerateColumns="false">
+    <DataGridColumns>
+        <DataGridColumn TItem="MaioresSaidas" Field="@nameof(MaioresSaidas.CodCliente)" Caption="Código Cliente" />
+        <DataGridColumn TItem="MaioresSaidas" Field="@nameof(MaioresSaidas.Nome)" Caption="Nome" />
+        <DataGridColumn TItem="MaioresSaidas" Field="@nameof(MaioresSaidas.Produto)" Caption="Produto" />
+        <DataGridColumn TItem="MaioresSaidas" Field="@nameof(MaioresSaidas.Descricao)" Caption="Descrição" />
+        <DataGridColumn TItem="MaioresSaidas" Field="@nameof(MaioresSaidas.Quantidade)" Caption="Quantidade" />
+    </DataGridColumns>
+</DataGrid>
+
+@code {
+    private List<MaioresSaidas> maioresSaidas = new List<MaioresSaidas>
+    {
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM033CHN0552", Descricao = "MARSHMALLOW W JAM FILLING STRAWBER 100GX30", Quantidade = 275.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM011CHN0047", Descricao = "MACARRAO XINZHU RICE NOODLES 500GX24/CP", Quantidade = 253.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM033CHN0551", Descricao = "MARSHMALLOW W JAM FILLING CHOCOLATE 100GX30", Quantidade = 220.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM005THA0666", Descricao = "CREMES PREP NEST COFFEMATE 12X1KG", Quantidade = 210.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM003THA0492", Descricao = "THAI FARINHA DE ARROZ MOTIGOME 500GX20 AZUL", Quantidade = 200.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM005THA0667", Descricao = "CREMES PREP NEST COFFEEMATE BOTTLED 15X400G", Quantidade = 200.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM022THA1325", Descricao = "MOLHOS PREP SRIRACHA CHILI SAUCE 12X435ML", Quantidade = 200.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM032CHN0578", Descricao = "RAIZ FORTE PASTA WASABI IN TUBE 43GX100", Quantidade = 200.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM033CHN0550", Descricao = "MARSHMALLOW W JAM F ILLING GRAPE 100GX30", Quantidade = 200.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM033CHN0554", Descricao = "MARSHMALLOW W JAM FILLING BLUEBERRY 100GX30", Quantidade = 160.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM022THA0761", Descricao = "MOLHOS PREP SWEET CHILLI SAUCE 5KG (1X3)", Quantidade = 120.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM011IDN1069", Descricao = "WAFERS ASTOR DOUBLE CHOCO WAFER 36X40G", Quantidade = 100.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM011THA0095", Descricao = "MACARRAO RICE STICK 5MM 40BAG/300G", Quantidade = 100.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM033CHN0553", Descricao = "MARSHMALLOW W JAM FILING ORANGE 100GX30", Quantidade = 99.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM008IDN1081", Descricao = "BALAS KOPIKO CANDY SUGAR FREE 48X75G", Quantidade = 90.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM011CHN0523", Descricao = "MACARRAO KUISHUPAI SHA HO FUN 250GX40", Quantidade = 65.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM005CHN1551", Descricao = "COGUM SCS DRIED SHITAKE MUSH SLICED 50GX50", Quantidade = 60.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM023CHN0513", Descricao = "MACARRAO SOBA NOODLE 300GX40/CTN", Quantidade = 60.00000m },
+        new MaioresSaidas { CodCliente = 13156, Nome = "MERCEARIA E BOMBONIERE TOWA LTDA", Produto = "IM015TWN0372", Descricao = "PREP ALIM C", Quantidade = 60.00000m }
+    };
+}

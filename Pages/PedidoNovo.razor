@@ -1,0 +1,76 @@
+﻿@page "/pedidonovo"
+
+<h3>Novo Pedido</h3>
+
+<EditForm Model="@novoPedido" OnValidSubmit="SalvarPedido">
+    <DataAnnotationsValidator />
+    @* <ValidationSummary /> *@
+
+    <div class="form-group">
+        <label for="numero">Número</label>
+        <InputNumber id="numero" class="form-control" @bind-Value="novoPedido.Numero" />
+    </div>
+    <div class="form-group">
+        <label for="emissao">Emissão</label>
+        <InputDate id="emissao" class="form-control" @bind-Value="novoPedido.Emissao" />
+    </div>
+    <div class="form-group">
+        <label for="status">Status</label>
+        <InputText id="status" class="form-control" @bind-Value="novoPedido.Status" />
+    </div>
+    <div class="form-group">
+        <label for="qtdTotal">Quantidade Total</label>
+        <InputNumber id="qtdTotal" class="form-control" @bind-Value="novoPedido.QtdTotal" />
+    </div>
+    <div class="form-group">
+        <label for="nf">NF</label>
+        <InputNumber id="nf" class="form-control" @bind-Value="novoPedido.NF" />
+    </div>
+    <div class="form-group">
+        <label for="coleta">Coleta</label>
+        <InputDate id="coleta" class="form-control" @bind-Value="novoPedido.Coleta" />
+    </div>
+    <div class="form-group">
+        <label for="cliente">Cliente</label>
+        <InputText id="cliente" class="form-control" @bind-Value="novoPedido.Cliente" />
+    </div>
+    <div class="form-group">
+        <label for="transportadora">Transportadora</label>
+        <InputText id="transportadora" class="form-control" @bind-Value="novoPedido.Transportadora" />
+    </div>
+    <div class="form-group">
+        <label for="obs">Observações</label>
+        <InputText id="obs" class="form-control" @bind-Value="novoPedido.OBS" />
+    </div>
+
+    <h4>Selecione os Produtos e Quantidades</h4>
+    <DataGrid TItem="Estoque" Data="@estoques" Editable="true" AutoGenerateColumns="false">
+        <DataGridColumns>
+            <DataGridColumn TItem="Estoque" Field="@nameof(Estoque.Codigo)" Caption="Código" />
+            <DataGridColumn TItem="Estoque" Field="@nameof(Estoque.Nome)" Caption="Nome" />
+            <DataGridColumn TItem="Estoque" Field="@nameof(Estoque.SaldoEstoque)" Caption="Saldo Estoque" />
+            <DataGridColumn TItem="Estoque" Field="@nameof(Estoque.QuantidadeRetirada)" Caption="Quantidade a Retirar" Editable="true" />
+        </DataGridColumns>
+    </DataGrid>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</EditForm>
+
+@code {
+    private Pedidos novoPedido = new Pedidos();
+
+    private List<Estoque> estoques = Estoque.carregaEstoque();
+
+    private void SalvarPedido()
+    {
+        // Lógica para salvar o pedido
+        Console.WriteLine("Pedido salvo com sucesso!");
+        foreach (var estoque in estoques)
+        {
+            if (estoque.QuantidadeRetirada > 0)
+            {
+                Console.WriteLine($"Produto: {estoque.Nome} ({estoque.Codigo}), Quantidade Retirada: {estoque.QuantidadeRetirada}");
+            }
+        }
+    }
+}

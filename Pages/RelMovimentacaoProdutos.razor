@@ -1,0 +1,43 @@
+﻿@page "/relmovimentacaoprodutos"
+
+<h3>Movimentação de Produtos</h3>
+
+<DataGrid TItem="MovimentacaoProdutos" Data="@movimentacoes" AutoGenerateColumns="false">
+    <DataGridColumns>
+        <DataGridColumn TItem="MovimentacaoProdutos" Field="@nameof(MovimentacaoProdutos.Codigo)" Caption="Código" />
+        <DataGridColumn TItem="MovimentacaoProdutos" Field="@nameof(MovimentacaoProdutos.Produto)" Caption="Produto" />
+        <DataGridColumn TItem="MovimentacaoProdutos" Field="@nameof(MovimentacaoProdutos.Lote)" Caption="Lote" />
+        <DataGridColumn TItem="MovimentacaoProdutos" Field="@nameof(MovimentacaoProdutos.Data)" Caption="Data" />
+        <DataGridColumn TItem="MovimentacaoProdutos" Field="@nameof(MovimentacaoProdutos.Quantidade)" Caption="Quantidade" />
+    </DataGridColumns>
+</DataGrid>
+
+@code {
+    private List<MovimentacaoProdutos> movimentacoes = new List<MovimentacaoProdutos>
+    {
+        new MovimentacaoProdutos { Codigo = "0000026", Produto = "CHICLETE MELÃO MKG022 259G 48X60 MARUKAWA", Lote = "21238", Data = new DateTime(2020, 4, 29), Quantidade = 10 },
+        new MovimentacaoProdutos { Codigo = "0000026", Produto = "CHICLETE MELÃO MKG022 259G 48X60 MARUKAWA", Lote = "21238", Data = new DateTime(2020, 8, 25), Quantidade = -4 },
+        new MovimentacaoProdutos { Codigo = "0000026", Produto = "CHICLETE MELÃO MKG022 259G 48X60 MARUKAWA", Lote = "21238", Data = new DateTime(2020, 11, 10), Quantidade = -6 },
+        new MovimentacaoProdutos { Codigo = "0000027", Produto = "CHICLETE MORANGO MKG018 259G 48X60 MARUKAWA", Lote = "21240", Data = new DateTime(2020, 4, 29), Quantidade = 20 },
+        new MovimentacaoProdutos { Codigo = "0000027", Produto = "CHICLETE MORANGO MKG018 259G 48X60 MARUKAWA", Lote = "21240", Data = new DateTime(2020, 11, 5), Quantidade = -4 },
+        new MovimentacaoProdutos { Codigo = "0000027", Produto = "CHICLETE MORANGO MKG018 259G 48X60 MARUKAWA", Lote = "21240", Data = new DateTime(2021, 1, 6), Quantidade = -4 },
+        new MovimentacaoProdutos { Codigo = "0000027", Produto = "CHICLETE MORANGO MKG018 259G 48X60 MARUKAWA", Lote = "21240", Data = new DateTime(2021, 3, 12), Quantidade = -5 },
+        new MovimentacaoProdutos { Codigo = "0000027", Produto = "CHICLETE MORANGO MKG018 259G 48X60 MARUKAWA", Lote = "21240", Data = new DateTime(2021, 4, 23), Quantidade = -7 },
+        new MovimentacaoProdutos { Codigo = "0000028", Produto = "CHICLETE LARANJA MKG001 259G 48X60 MARUKAWA", Lote = "21237", Data = new DateTime(2020, 4, 29), Quantidade = 10 },
+        new MovimentacaoProdutos { Codigo = "0000028", Produto = "CHICLETE LARANJA MKG001 259G 48X60 MARUKAWA", Lote = "21237", Data = new DateTime(2021, 4, 23), Quantidade = -5 },
+        new MovimentacaoProdutos { Codigo = "0000028", Produto = "CHICLETE LARANJA MKG001 259G 48X60 MARUKAWA", Lote = "21237", Data = new DateTime(2021, 6, 7), Quantidade = -5 },
+        new MovimentacaoProdutos { Codigo = "0000029", Produto = "CHICLETE UVA MKG019 259G 48X60 MARUKAWA", Lote = "21239", Data = new DateTime(2020, 4, 29), Quantidade = 10 },
+        new MovimentacaoProdutos { Codigo = "0000029", Produto = "CHICLETE UVA MKG019 259G 48X60 MARUKAWA", Lote = "21239", Data = new DateTime(2020, 8, 25), Quantidade = -4 },
+        new MovimentacaoProdutos { Codigo = "0000029", Produto = "CHICLETE UVA MKG019 259G 48X60 MARUKAWA", Lote = "21239", Data = new DateTime(2020, 11, 5), Quantidade = -6 },
+        new MovimentacaoProdutos { Codigo = "0000123", Produto = "BISCOITOS RICE CRACKER SEAWEED FLAV 136G 2X10X20 0000123", Lote = "127165", Data = new DateTime(2021, 9, 24), Quantidade = 470 },
+        new MovimentacaoProdutos { Codigo = "0000123", Produto = "BISCOITOS RICE CRACKER SEAWEED FLAV 136G 2X10X20 0000123", Lote = "127165", Data = new DateTime(2021, 9, 29), Quantidade = -50 },
+        new MovimentacaoProdutos { Codigo = "0000123", Produto = "BISCOITOS RICE CRACKER SEAWEED FLAV 136G 2X10X20 0000123", Lote = "127165", Data = new DateTime(2021, 10, 6), Quantidade = -30 },
+        new MovimentacaoProdutos { Codigo = "0000123", Produto = "BISCOITOS RICE CRACKER SEAWEED FLAV 136G 2X10X20 0000123", Lote = "127165", Data = new DateTime(2021, 10, 13), Quantidade = -50 },
+        new MovimentacaoProdutos { Codigo = "0000123", Produto = "BISCOITOS RICE CRACKER SEAWEED FLAV 136G 2X10X20 0000123", Lote = "127165", Data = new DateTime(2021, 10, 20), Quantidade = -60 },
+        new MovimentacaoProdutos { Codigo = "0000123", Produto = "BISCOITOS RICE CRACKER SEAWEED FLAV 136G 2X10X20 0000123", Lote = "127165", Data = new DateTime(2021, 10, 25), Quantidade = -70 },
+        new MovimentacaoProdutos { Codigo = "0000123", Produto = "BISCOITOS RICE CRACKER SEAWEED FLAV 136G 2X10X20 0000123", Lote = "127165", Data = new DateTime(2021, 11, 3), Quantidade = -50 },
+        new MovimentacaoProdutos { Codigo = "0000123", Produto = "BISCOITOS RICE CRACKER SEAWEED FLAV 136G 2X10X20 0000123", Lote = "127165", Data = new DateTime(2021, 11, 5), Quantidade = -30 },
+        new MovimentacaoProdutos { Codigo = "0000123", Produto = "BISCOITOS RICE CRACKER SEAWEED FLAV 136G 2X10X20 0000123", Lote = "127165", Data = new DateTime(2021, 11, 5), Quantidade = -100 },
+        new MovimentacaoProdutos { Codigo = "0000123", Produto = "BISCOITOS RICE CRACKER SEAWEED FLAV 136G 2X10X20 0000123", Lote = "127165", Data = new DateTime(2021, 11, 17), Quantidade = -11 }
+    };
+}
